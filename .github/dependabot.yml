@@ -11,5 +11,5 @@ updates:
       interval: "daily"
     allow:
       - dependency-name: "python"
-        versions: "3.9.x"
+        versions: ["3.9.x"]
       
