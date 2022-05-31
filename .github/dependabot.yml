@@ -9,7 +9,7 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-    allow:
+    ignore:
       - dependency-name: "python"
-        versions: ["3.9.x"]
+        versions: ["3.10.x", "3.11.x"]
       
