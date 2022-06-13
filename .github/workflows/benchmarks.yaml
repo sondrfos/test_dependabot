@@ -7,17 +7,15 @@ on:
   pull_request:
     branches:
       - main
-
-permissions:
-  pull-requests: write
-  repository-projects: write
     
 env:
   PYTHON_VERSION: 3.9.13
 
+permissions: write-all
+
 jobs:
   benchmark:
-    runs-on: [linux]
+    runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
     - name: Setup Python
@@ -31,7 +29,7 @@ jobs:
         python -m pip install pytest pytest-benchmark
     - name: Run benchmarks
       run: |
-        pytest -m benchmark --benchmark-json=benchmarks/output.json
+        pytest --benchmark-json=benchmarks/output.json benchmark.py
     - name: Store benchmark results (if pushed to master)
       uses: benchmark-action/github-action-benchmark@v1.14.0
       with:
