@@ -7,10 +7,6 @@ on:
   pull_request:
     branches:
       - main
-
-permissions:
-  pull-requests: write
-  repository-projects: write
     
 env:
   PYTHON_VERSION: 3.9.13
