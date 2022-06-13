@@ -11,6 +11,8 @@ on:
 env:
   PYTHON_VERSION: 3.9.13
 
+permissions: write-all
+
 jobs:
   benchmark:
     runs-on: ubuntu-latest
