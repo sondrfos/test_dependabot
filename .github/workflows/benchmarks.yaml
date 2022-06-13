@@ -17,7 +17,7 @@ env:
 
 jobs:
   benchmark:
-    runs-on: [self-hosted, linux]
+    runs-on: [linux]
     timeout-minutes: 15
     steps:
     - name: Setup Python
