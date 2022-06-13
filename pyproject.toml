@@ -1,0 +1,12 @@
+
+[tool.pytest.ini_options]
+addopts = "-p no:cacheprovider"
+markers = [
+    "unittest",
+    "integration",
+    "end_to_end",
+    "benchmark",
+    "api_test",
+    "alembic",
+    "container_test"
+]
