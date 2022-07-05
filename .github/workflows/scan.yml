@@ -24,4 +24,9 @@ jobs:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         image: test
-        args: --file=Dockerfile --fail-on=upgradable
+        args: --file=Dockerfile --fail-on=upgradable --json-file-output=snyk.json
+    - name: Create trello if neccessary
+      run: |
+        if [ "$(cat snyk.json | jq '[.docker | .baseImageRemediation | select(.code=="REMEDIATION_AVAILABLE")]')" != "[]" ]; then 
+          exit 1
+        fi
