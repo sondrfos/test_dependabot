@@ -2,9 +2,9 @@ name: Snyk Container
 
 on:
   workflow_dispatch:
-  
+
 jobs:
-  scan_test:
+  scan_python:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -22,13 +22,14 @@ jobs:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         image: test
-        args: --file=Dockerfile
+        args: --file=Dockerfile --severity-threshold=high
     - name: Upload result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v1
+      uses: github/codeql-action/upload-sarif@v2
       with:
         sarif_file: snyk.sarif
 
-  scan_test2:
+
+  scan_go:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -46,8 +47,8 @@ jobs:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         image: test2
-        args: --file=Dockerfile
+        args: --file=Dockerfile.go
     - name: Upload result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@v1
+      uses: github/codeql-action/upload-sarif@v2
       with:
         sarif_file: snyk.sarif
