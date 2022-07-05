@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1657021507071,
+  "lastUpdate": 1657024163164,
   "repoUrl": "https://github.com/sondrfos/test_dependabot",
   "entries": {
     "Benchmark": [
@@ -149,6 +149,35 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.000010088515325372548",
             "extra": "mean: 5.0050435066223145 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chikamaharry@gmail.com",
+            "name": "Sondre"
+          },
+          "committer": {
+            "email": "chikamaharry@gmail.com",
+            "name": "Sondre"
+          },
+          "distinct": true,
+          "id": "59d92748cfb2e76672008ca2c74589440a25393a",
+          "message": ".",
+          "timestamp": "2022-07-05T14:28:14+02:00",
+          "tree_id": "ae2037f22c5c61413cfc568e748fdb3cf623b26f",
+          "url": "https://github.com/sondrfos/test_dependabot/commit/59d92748cfb2e76672008ca2c74589440a25393a"
+        },
+        "date": 1657024162446,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "benchmark.py::test_clustering_performance_cluster_every_frame",
+            "value": 0.19983348416634528,
+            "unit": "iter/sec",
+            "range": "stddev: 0.002039938175680974",
+            "extra": "mean: 5.0041663646698 sec\nrounds: 5"
           }
         ]
       }
