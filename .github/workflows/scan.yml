@@ -24,4 +24,4 @@ jobs:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         image: test
-        args: --file=Dockerfile --fail-on=patchable
+        args: --file=Dockerfile --fail-on=upgradable
